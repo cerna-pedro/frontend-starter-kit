@@ -21,21 +21,6 @@ module.exports = {
     minimize: true,
     minimizer: [new TerserJSPlugin({}), new OptimizeCSSAssetsPlugin({})],
   },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/html/index.html',
-    }),
-    new FaviconsWebpackPlugin({
-      logo: './src/favicon/starter-icon.png',
-      outputPath: 'favicons',
-      prefix: 'favicons/',
-    }),
-    new MiniCssExtractPlugin({
-      filename: '[name].css',
-      chunkFilename: '[id].css',
-    }),
-  ],
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
@@ -82,4 +67,19 @@ module.exports = {
       },
     ],
   },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: './src/html/index.html',
+    }),
+    new FaviconsWebpackPlugin({
+      logo: './src/favicon/starter-icon.png',
+      outputPath: 'favicons',
+      prefix: 'favicons/',
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].css',
+      chunkFilename: '[id].css',
+    }),
+  ],
 };
